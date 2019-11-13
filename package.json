@@ -1,11 +1,13 @@
 {
-  "main": "node_modules/expo/AppEntry.js",
   "scripts": {
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
-    "eject": "expo eject"
+    "eject": "expo eject",
+    "predeploy": "expo build:web",
+    "deploy": "netlify deploy --dir web-build --prod",
+    "test": "jest"
   },
   "dependencies": {
     "@expo/match-media": "^0.0.0-alpha.1",
@@ -13,11 +15,14 @@
     "react": "16.8.3",
     "react-dom": "16.8.3",
     "react-native": "https://github.com/expo/react-native/archive/sdk-35.0.0.tar.gz",
+    "react-native-safe-area-context": "^0.6.0",
+    "react-native-appearance": "^0.2.1",
     "react-native-web": "^0.11.7",
     "react-responsive": "^8.0.1"
   },
   "devDependencies": {
-    "babel-preset-expo": "^7.1.0"
+    "babel-preset-expo": "^7.1.0",
+    "jest-expo-enzyme": "0.0.1"
   },
   "private": true
 }

@@ -1,30 +1,15 @@
 {
   "expo": {
-    "name": "b23",
-    "slug": "b23",
-    "privacy": "public",
-    "sdkVersion": "35.0.0",
-    "platforms": [
-      "ios",
-      "android",
-      "web"
-    ],
-    "version": "1.0.0",
-    "orientation": "portrait",
+    "name": "Notes",
+    "slug": "Notes",
     "icon": "./assets/icon.png",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/icon.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#DCC371"
     },
-    "updates": {
-      "fallbackToCacheTimeout": 0
-    },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
-    "ios": {
-      "supportsTablet": true
+    "web": {
+      "barStyle": "black-translucent"
     }
   }
 }
