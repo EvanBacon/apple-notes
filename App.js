@@ -2,6 +2,7 @@ import '@expo/match-media';
 
 import { Ionicons } from '@expo/vector-icons';
 import * as React from 'react';
+import * as Font from 'expo-font';
 import {
   Dimensions,
   FlatList,
@@ -30,6 +31,8 @@ const data = [
   { title: '🛠 Workshops', count: '49' },
   { title: '🐸 zzz Frog Design', count: '12' },
 ];
+
+// TODO: Lock body scrolling
 
 function App() {
   const [text, setText] = React.useState(
@@ -143,6 +146,7 @@ function App() {
           </Text>
         </View>
         <FlatList
+          initialNumToRender={data.length}
           contentContainerStyle={{
             marginTop: 36,
             borderBottomColor: borderColor,
@@ -367,10 +371,31 @@ function App() {
   );
 }
 
+function AssetWrap() {
+  const [loaded, setLoaded] = React.useState(false);
+
+  React.useEffect(() => {
+    (async () => {
+      try {
+        await Promise.all([
+          Font.loadAsync(Ionicons.font),
+        ]);
+      } catch (e) {
+        console.log({ e });
+      } finally {
+        setLoaded(true);
+      }
+    })()
+  });
+
+  if (!loaded) return <View />
+  return <App />
+}
+
 export default () => (
   <AppearanceProvider>
     <SafeAreaProvider>
-      <App />
+      <AssetWrap />
     </SafeAreaProvider>
   </AppearanceProvider>
 );

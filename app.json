@@ -4,7 +4,7 @@
     "slug": "Notes",
     "icon": "./assets/icon.png",
     "splash": {
-      "image": "./assets/icon.png",
+      "image": "./assets/splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#DCC371"
     },
